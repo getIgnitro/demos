@@ -1,6 +1,6 @@
-// Dukkan Sweets — portfolio demo. Products, cart (localStorage), WhatsApp checkout. No backend.
+// Pâtisserie Lumière — portfolio demo. Products, cart (localStorage), WhatsApp checkout. No backend.
 (function(){
-  var WA='15550100199', KEY='dukkan_cart';
+  var WA='15550100199', KEY='lumiere_cart';
   var U=function(id){return 'https://images.unsplash.com/photo-'+id+'?w=800&h=800&fit=crop&q=75';};
   var P=[
     {id:'drip-cake',cat:'cakes',en:'Fraisier — 1.5 kg',den:'Génoise, strawberries, crème mousseline. Serves 12.',price:60,img:U('1616690710400-a16d146927c5'),badge:'BEST SELLER'},

@@ -214,9 +214,9 @@ EU_PRODUCTS = [
     ("Celebration Cupcakes (6)", "Cupcakes de Fête (6)"), ("Glazed Donut Box (6)", "Beignets Glacés (6)"), ("Strawberry Crêpe Box (4)", "Crêpes aux Fraises (4)"),
     ("Tiramisu Slice Box (4)", "Tiramisu (4 parts)"), ("Corporate Gift Hamper", "Coffret Entreprise"),
 ]
-EU_JS = {"salon": [("Booking request — Noor Beauty Lounge", "Booking request — Élise Beauty Studio")],
-         "contracting": [("Quote request — Al Reem Contracting", "Quote request — Berger & Söhne Bau")],
-         "store": [("New order — Dukkan Sweets", "New order — Pâtisserie Lumière")] + EU_PRODUCTS}
+EU_JS = {"salon": [("Booking request — Noor Beauty Lounge", "Booking request — Élise Beauty Studio"), ("// Noor Beauty Lounge", "// Élise Beauty Studio")],
+         "contracting": [("Quote request — Al Reem Contracting", "Quote request — Berger & Söhne Bau"), ("// Al Reem Contracting", "// Berger & Söhne Bau")],
+         "store": [("New order — Dukkan Sweets", "New order — Pâtisserie Lumière"), ("// Dukkan Sweets", "// Pâtisserie Lumière"), ("dukkan_cart", "lumiere_cart")] + EU_PRODUCTS}
 EU = {"salon": EU_SALON, "contracting": EU_CONTRACTING, "store": EU_STORE}
 for site in ["salon", "contracting", "store"]:
     for f in (out / site).glob("*.html"):

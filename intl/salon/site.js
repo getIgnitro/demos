@@ -1,4 +1,4 @@
-// Noor Beauty Lounge — portfolio demo. Language toggle + mobile nav + WhatsApp form.
+// Élise Beauty Studio — portfolio demo. Language toggle + mobile nav + WhatsApp form.
 (function(){
   var WA='15550100199'; // demo number — replaced with the client's on delivery
   var body=document.body, saved=null;

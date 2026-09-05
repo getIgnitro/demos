@@ -1,4 +1,4 @@
-// Al Reem Contracting — portfolio demo. Language toggle + mobile nav + WhatsApp quote form.
+// Berger & Söhne Bau — portfolio demo. Language toggle + mobile nav + WhatsApp quote form.
 (function(){
   var WA='15550100199';
   var body=document.body, saved=null; try{saved=localStorage.getItem('lang');}catch(e){}
