@@ -4,7 +4,7 @@
   var body=document.body, saved=null;
   try{saved=localStorage.getItem('lang');}catch(e){}
   if(saved==='ar') body.classList.add('ar');
-  function label(){var b=document.getElementById('lang'); if(b) b.textContent=body.classList.contains('ar')?'EN':'عربي';}
+  function label(){var b=document.getElementById('lang'); if(b) b.textContent=body.classList.contains('ar')?'EN':'';}
   label();
   var lb=document.getElementById('lang'); if(lb) lb.addEventListener('click',function(){body.classList.toggle('ar'); try{localStorage.setItem('lang',body.classList.contains('ar')?'ar':'en');}catch(e){} label();});
   var bg=document.getElementById('burger'), m=document.getElementById('menu'); if(bg&&m) bg.addEventListener('click',function(){m.classList.toggle('open');});

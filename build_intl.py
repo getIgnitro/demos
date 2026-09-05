@@ -134,6 +134,8 @@ for site, extra in [("salon", SALON), ("contracting", CONTRACTING), ("store", ST
         if site == "store": j = re.sub(r"price:(\d+)", lambda m: "price:" + PRICE_MAP.get(m.group(1), m.group(1)), j)
         j = apply(j, STORE_JS if site == "store" else [("'97460027117'", "'" + PHONE_WA + "'")])
         j = j.replace("— demo by Ignitro", "— portfolio demo").replace("— demo store by Ignitro", "— portfolio demo")
+        j = re.sub(r"'[^']*[؀-ۿ][^']*'", "''", j)   # drop any Arabic string literal
+        j = j.replace("'QAR 15'", "'$5'").replace("QAR", "$")
         f.write_text(j, encoding="utf-8")
     for f in (out / site).glob("*.css"):
         c = f.read_text(encoding="utf-8").replace("— demo by Ignitro", "— portfolio demo").replace("— demo store by Ignitro", "— portfolio demo")
