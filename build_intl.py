@@ -168,3 +168,64 @@ a.card:hover{transform:translateY(-3px)}.card .t{font-size:12px;font-weight:800;
 '''
 (out / "index.html").write_text(HUB, encoding="utf-8")
 print("intl built")
+# ---------- European identities (applied after everything else; prices stay USD) ----------
+EU_SALON = [
+    ("Noor <b>Beauty</b> Lounge", "Élise <b>Beauty</b> Studio"), ("Noor Beauty Lounge", "Élise Beauty Studio"), ("Hi%20Noor", "Hi%20%C3%89lise"),
+    ("Ladies Salon, Midtown", "Ladies Salon, Amsterdam"), ("Ladies-only salon in Midtown.", "Ladies-only salon in the Jordaan, Amsterdam."),
+    ("Ladies only · Midtown", "Ladies only · Jordaan, Amsterdam"), ("Where the city's women come to feel like themselves again.", "Where Amsterdam's women come to feel like themselves again."),
+    ("214 Maple Avenue, 2nd floor, Midtown", "Prinsengracht 214, 1st floor, 1016 HD Amsterdam"), ("214 Maple Avenue, Midtown", "Prinsengracht 214, Amsterdam"),
+    ("years in Midtown", "years in the Jordaan"), ("hello@noorbeautylounge.com", "hello@elisebeauty.nl"), ("@noorbeautyqa", "@elisebeautystudio"),
+    ("maps?q=Maple+Avenue+Midtown&output=embed", "maps?q=Prinsengracht+214+Amsterdam&output=embed"),
+    ("Home visit surcharge", "Home visit surcharge (Amsterdam)"),
+]
+EU_CONTRACTING = [
+    ("<i>AR</i><span>Al Reem<small>", "<i>BS</i><span>Berger &amp; Söhne<small>"), ("Al Reem Contracting LLC", "Berger &amp; Söhne Bau GmbH"),
+    ("Al Reem Contracting — Civil, MEP & Fit-out", "Berger & Söhne Bau — Civil, MEP & Fit-out, Munich"), ("Al Reem Contracting", "Berger &amp; Söhne Bau"),
+    ("Hi%20Al%20Reem", "Hi%20Berger%20%26%20S%C3%B6hne"), ("Why Al Reem", "Why Berger &amp; Söhne"), ("Al Reem started in 2012", "Berger &amp; Söhne started in 2012"),
+    ("45 Commerce Drive, Eastside · Mon–Fri 7:00–18:00", "Industriestraße 45, 85748 Garching bei München · Mon–Fri 7:00–18:00"),
+    ("45 Commerce Drive, Gate 12, Eastside", "Industriestraße 45, Tor 12, Garching bei München"), ("45 Commerce Drive, Eastside", "Industriestraße 45, Garching"),
+    ("Licensed &amp; insured · Eastside", "Meisterbetrieb · Munich"), ("Licensed general contractor:", "Munich master-builder firm:"), ("Licensed general contractor since 2012.", "Munich master-builder firm since 2012."),
+    ("across the region — 140 projects", "across Bavaria — 140 projects"), ("info@alreemcontracting.com", "info@berger-bau.de"),
+    ("Utility connections and fire-marshal sign-off handled by us.", "Stadtwerke connections and fire-safety sign-off handled by us."), ("Utility connections and load upgrades", "Stadtwerke connections and load upgrades"),
+    ("City permits and inspections", "Bauamt permits and inspections"), ("Fire suppression and fire-marshal certificate", "Fire suppression and Brandschutz certificate"),
+    ("from our Eastside yard, delivered same-day inside the city", "from our Garching yard, delivered same-day inside Munich"), ("Same-day delivery inside the city", "Same-day delivery inside Munich"),
+    ("Logistics warehouse, Eastside", "Logistics warehouse, Freising"), ("Office fit-out, Downtown", "Office fit-out, Schwabing"), ("Townhouse row, Lakeview", "Townhouse row, Starnberg"),
+    ("Clinic MEP, Midtown", "Clinic MEP, Bogenhausen"), ("HVAC + electrical + fire, health-department approved", "HVAC + electrical + fire, Gesundheitsamt approved"),
+    ("Showroom, Route 9", "Showroom, A9 corridor"), ("Site works &amp; access roads, North Park", "Site works &amp; access roads, Unterschleißheim"), ("2.1 km · city approved", "2.1 km · Landratsamt approved"),
+    ("Thirteen years, one Eastside yard, 140 finished projects.", "Thirteen years, one Garching yard, 140 finished projects."), ("a materials yard on Commerce Drive.", "a materials yard on Industriestraße."),
+    ("We are a licensed general contractor, ISO 9001 certified, bonded and insured for every site we enter.", "We are a registered Meisterbetrieb with the Handwerkskammer München, ISO 9001 certified and insured for every site we enter."),
+    ("Eng. Khalid Reem", "Dipl.-Ing. Markus Berger"), ("Eng. Priya Nair", "Ing. Sofia Lindqvist"), ("Mohammed Farooq", "Tomasz Nowak"),
+    ("Civil engineer, 20 years in the trade. Signs every quote personally.", "Civil engineer, 20 years in Bavarian construction. Signs every quote personally."),
+    ("Master electrician; 300+ connections completed.", "Elektromeister; 300+ connections completed."),
+    ("License #12345 · Bonded &amp; insured · ISO 9001", "HRB 123456 · Meisterbetrieb · ISO 9001"), ("e.g. Lakeview", "e.g. Starnberg"),
+    ("maps?q=Commerce+Drive&output=embed", "maps?q=Industriestra%C3%9Fe+45+Garching&output=embed"),
+]
+EU_STORE = [
+    ("Dukkan <b>Sweets</b>", "Pâtisserie <b>Lumière</b>"), ("Dukkan Sweets", "Pâtisserie Lumière"), ("Dukkan started as", "Lumière started as"), ("Hi%20Dukkan", "Bonjour%20Lumi%C3%A8re"),
+    ("Old Town · since 2015", "Vieux Lyon · since 2015"), ("Old Town Market, Unit 22", "22 Rue du Marché, 69005 Lyon"), ("a six-foot counter in Old Town Market", "a two-metre counter at the Marché Saint-Antoine"),
+    ("from our kitchen in Old Town.", "from our kitchen in Vieux Lyon."), ("Order before 2pm, anywhere in the city.", "Order before 14:00, anywhere in Lyon."), ("Order before 2pm for same-day", "Order before 14:00 for same-day"),
+    ("Same-day delivery before 2pm", "Same-day delivery in Lyon before 14:00"), ("hello@dukkansweets.com", "bonjour@patisserie-lumiere.fr"), ("e.g. Midtown", "e.g. Croix-Rousse"),
+    ("maps?q=Old+Town+Market&output=embed", "maps?q=Rue+du+March%C3%A9+Lyon&output=embed"), ("Family-run sweets kitchen in Old Town.", "Family-run pâtisserie in Vieux Lyon."),
+    ("Sweets worth the drive. Now delivered instead.", "Pastries worth the drive. Now delivered instead."), ("Cakes, Chocolate & Fresh Bakes", "Cakes, Chocolate & Fresh Pastries"),
+]
+EU_PRODUCTS = [
+    ("Party Drip Cake — 1.5 kg", "Fraisier — 1.5 kg"), ("Vanilla sponge, pink ganache drip, cookie crown. Serves 12.", "Génoise, strawberries, crème mousseline. Serves 12."),
+    ("Signature Chocolate Cake", "Gâteau au Chocolat"), ("Assorted Chocolate Box (16)", "Praliné Box (16)"), ("Chocolate Chip Cookies (12)", "Sablés au Chocolat (12)"),
+    ("Celebration Cupcakes (6)", "Cupcakes de Fête (6)"), ("Glazed Donut Box (6)", "Beignets Glacés (6)"), ("Strawberry Crêpe Box (4)", "Crêpes aux Fraises (4)"),
+    ("Tiramisu Slice Box (4)", "Tiramisu (4 parts)"), ("Corporate Gift Hamper", "Coffret Entreprise"),
+]
+EU_JS = {"salon": [("Booking request — Noor Beauty Lounge", "Booking request — Élise Beauty Studio")],
+         "contracting": [("Quote request — Al Reem Contracting", "Quote request — Berger & Söhne Bau")],
+         "store": [("New order — Dukkan Sweets", "New order — Pâtisserie Lumière")] + EU_PRODUCTS}
+EU = {"salon": EU_SALON, "contracting": EU_CONTRACTING, "store": EU_STORE}
+for site in ["salon", "contracting", "store"]:
+    for f in (out / site).glob("*.html"):
+        f.write_text(apply(f.read_text(encoding="utf-8"), EU[site]), encoding="utf-8")
+    for f in (out / site).glob("*.js"):
+        f.write_text(apply(f.read_text(encoding="utf-8"), EU_JS[site]), encoding="utf-8")
+HUB = HUB.replace("<h2>Noor Beauty Lounge</h2><p>Salon. Home, services with prices, WhatsApp booking form.</p>", "<h2>Élise Beauty Studio</h2><p>Ladies salon, Amsterdam. Home, services with prices, WhatsApp booking form.</p>")
+HUB = HUB.replace("<h2>Al Reem Contracting</h2><p>Contractor. Services, project gallery, team page, quote form.</p>", "<h2>Berger &amp; Söhne Bau</h2><p>Construction firm, Munich. Services, project gallery, team page, quote form.</p>")
+HUB = HUB.replace("<h2>Dukkan Sweets</h2><p>Cakes and bakes: catalogue, cart, delivery rules, checkout to WhatsApp.</p>", "<h2>Pâtisserie Lumière</h2><p>Pâtisserie, Lyon: catalogue, cart, delivery rules, checkout to WhatsApp.</p>")
+(out / "index.html").write_text(HUB, encoding="utf-8")
+print("european identities applied (USD kept)")
+

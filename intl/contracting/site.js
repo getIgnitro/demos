@@ -8,7 +8,7 @@
   var bg=document.getElementById('burger'), m=document.getElementById('menu'); if(bg&&m) bg.addEventListener('click',function(){m.classList.toggle('open');});
   var f=document.getElementById('quote'); if(f) f.addEventListener('submit',function(e){
     e.preventDefault(); var v=function(n){var el=f.querySelector('[name='+n+']'); return el?el.value.trim():'';};
-    var msg='Quote request — Al Reem Contracting\nName: '+v('name')+'\nCompany: '+v('company')+'\nService: '+v('service')+'\nLocation: '+v('location')+'\nDetails: '+v('details');
+    var msg='Quote request — Berger & Söhne Bau\nName: '+v('name')+'\nCompany: '+v('company')+'\nService: '+v('service')+'\nLocation: '+v('location')+'\nDetails: '+v('details');
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
   });
 })();

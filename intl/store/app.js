@@ -3,15 +3,15 @@
   var WA='15550100199', KEY='dukkan_cart';
   var U=function(id){return 'https://images.unsplash.com/photo-'+id+'?w=800&h=800&fit=crop&q=75';};
   var P=[
-    {id:'drip-cake',cat:'cakes',en:'Party Drip Cake — 1.5 kg',den:'Vanilla sponge, pink ganache drip, cookie crown. Serves 12.',price:60,img:U('1616690710400-a16d146927c5'),badge:'BEST SELLER'},
-    {id:'choc-cake',cat:'cakes',en:'Signature Chocolate Cake',den:'Three layers, dark ganache, piped rosettes. Serves 10.',price:40,img:U('1578985545062-69928b1d9587')},
-    {id:'choc-box',cat:'chocolate',en:'Assorted Chocolate Box (16)',den:'Hazelnut, saffron, sea salt and rose pralines.',price:35,img:U('1481391319762-47dff72954d9'),badge:'GIFT'},
-    {id:'cookies',cat:'baked',en:'Chocolate Chip Cookies (12)',den:'Baked every morning. Crisp edge, soft centre.',price:12,img:U('1558961363-fa8fdf82db35')},
-    {id:'cupcakes',cat:'baked',en:'Celebration Cupcakes (6)',den:'Vanilla and chocolate, your colours on request.',price:18,img:U('1599785209707-a456fc1337bb')},
-    {id:'donuts',cat:'baked',en:'Glazed Donut Box (6)',den:'Chocolate, vanilla and sprinkles. Kids’ favourite.',price:15,img:U('1551024601-bec78aea704b')},
-    {id:'crepes',cat:'baked',en:'Strawberry Crêpe Box (4)',den:'Fresh cream and strawberries, made to order.',price:18,img:U('1587314168485-3236d6710814')},
-    {id:'tiramisu',cat:'baked',en:'Tiramisu Slice Box (4)',den:'Coffee-soaked, mascarpone, cocoa. Alcohol-free.',price:20,img:U('1571115177098-24ec42ed204d')},
-    {id:'corporate-hamper',cat:'gifts',en:'Corporate Gift Hamper',den:'Chocolate box, cookies and cupcakes, your logo on the card.',price:70,img:U('1607478900766-efe13248b125'),badge:'CORPORATE'}
+    {id:'drip-cake',cat:'cakes',en:'Fraisier — 1.5 kg',den:'Génoise, strawberries, crème mousseline. Serves 12.',price:60,img:U('1616690710400-a16d146927c5'),badge:'BEST SELLER'},
+    {id:'choc-cake',cat:'cakes',en:'Gâteau au Chocolat',den:'Three layers, dark ganache, piped rosettes. Serves 10.',price:40,img:U('1578985545062-69928b1d9587')},
+    {id:'choc-box',cat:'chocolate',en:'Praliné Box (16)',den:'Hazelnut, saffron, sea salt and rose pralines.',price:35,img:U('1481391319762-47dff72954d9'),badge:'GIFT'},
+    {id:'cookies',cat:'baked',en:'Sablés au Chocolat (12)',den:'Baked every morning. Crisp edge, soft centre.',price:12,img:U('1558961363-fa8fdf82db35')},
+    {id:'cupcakes',cat:'baked',en:'Cupcakes de Fête (6)',den:'Vanilla and chocolate, your colours on request.',price:18,img:U('1599785209707-a456fc1337bb')},
+    {id:'donuts',cat:'baked',en:'Beignets Glacés (6)',den:'Chocolate, vanilla and sprinkles. Kids’ favourite.',price:15,img:U('1551024601-bec78aea704b')},
+    {id:'crepes',cat:'baked',en:'Crêpes aux Fraises (4)',den:'Fresh cream and strawberries, made to order.',price:18,img:U('1587314168485-3236d6710814')},
+    {id:'tiramisu',cat:'baked',en:'Tiramisu (4 parts)',den:'Coffee-soaked, mascarpone, cocoa. Alcohol-free.',price:20,img:U('1571115177098-24ec42ed204d')},
+    {id:'corporate-hamper',cat:'gifts',en:'Coffret Entreprise',den:'Chocolate box, cookies and cupcakes, your logo on the card.',price:70,img:U('1607478900766-efe13248b125'),badge:'CORPORATE'}
   ];
   var body=document.body, ar=function(){return body.classList.contains('ar');};
   var saved=null; try{saved=localStorage.getItem('lang');}catch(e){} if(saved==='ar') body.classList.add('ar');
@@ -40,7 +40,7 @@
       s('sub','$'+sub); s('del',del?'$'+del:(ar()?'':'Free')); s('tot','$'+tot);
       var f=document.getElementById('checkout'); if(f){f.onsubmit=function(e){e.preventDefault(); if(!ids.length) return; var v=function(n){var el=f.querySelector('[name='+n+']'); return el?el.value.trim():'';};
         var lines=ids.map(function(id){var p=P.find(function(x){return x.id===id;}); return '• '+p.en+' × '+c[id]+' = $'+(p.price*c[id]);}).join('\n');
-        var msg='New order — Dukkan Sweets\n'+lines+'\nDelivery: '+(del?'$5':'Free')+'\nTOTAL: $'+tot+'\n\nName: '+v('name')+'\nArea: '+v('area')+'\nAddress: '+v('address')+'\nWhen: '+v('when')+'\nPayment: '+v('pay');
+        var msg='New order — Pâtisserie Lumière\n'+lines+'\nDelivery: '+(del?'$5':'Free')+'\nTOTAL: $'+tot+'\n\nName: '+v('name')+'\nArea: '+v('area')+'\nAddress: '+v('address')+'\nWhen: '+v('when')+'\nPayment: '+v('pay');
         window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');};}
     }
   }
