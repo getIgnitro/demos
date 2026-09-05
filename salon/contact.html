@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book &amp; Contact — Noor Beauty Lounge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700;800&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header><div class="wrap"><nav>
+  <a class="logo" href="index.html">Noor <b>Beauty</b> Lounge</a>
+  <div class="menu" id="menu">
+    <a href="index.html"><span class="en">Home</span><span class="ar">الرئيسية</span></a>
+    <a href="services.html"><span class="en">Services &amp; Prices</span><span class="ar">الخدمات والأسعار</span></a>
+    <a class="active" href="contact.html"><span class="en">Book &amp; Contact</span><span class="ar">الحجز والتواصل</span></a>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center"><button class="lang" id="lang">عربي</button><button class="burger" id="burger" aria-label="menu">☰</button></div>
+</nav></div></header>
+
+<section style="padding-top:56px"><div class="wrap">
+  <div class="sec-h"><span class="eyebrow" style="color:var(--rose)"><span class="en">Book &amp; contact</span><span class="ar">الحجز والتواصل</span></span><h2><span class="en">Tell us what you'd like. We'll confirm on WhatsApp within the hour.</span><span class="ar">أخبرينا بما ترغبين به، ونؤكد عبر واتساب خلال ساعة.</span></h2></div>
+  <div class="contact">
+    <form id="book">
+      <label><span class="en">Your name</span><span class="ar">اسمك</span></label><input name="name" required>
+      <label><span class="en">Service</span><span class="ar">الخدمة</span></label>
+      <select name="service"><option>Hair</option><option>Nails</option><option>Skin &amp; Spa</option><option>Bridal</option></select>
+      <label><span class="en">Preferred day &amp; time</span><span class="ar">اليوم والوقت المفضل</span></label><input name="when" placeholder="e.g. Thursday 5pm">
+      <label><span class="en">Notes</span><span class="ar">ملاحظات</span></label><textarea name="notes"></textarea>
+      <div class="cta-row"><button class="btn" type="submit"><span class="en">Send booking on WhatsApp</span><span class="ar">أرسلي الحجز عبر واتساب</span></button></div>
+    </form>
+    <div class="info">
+      <div><b><span class="en">Address</span><span class="ar">العنوان</span></b><span class="en">Al Sadd Street, Building 14, 1st floor, Doha</span><span class="ar">شارع السد، مبنى ١٤، الطابق الأول، الدوحة</span></div>
+      <div><b><span class="en">Hours</span><span class="ar">ساعات العمل</span></b><span class="en">Saturday to Thursday 10:00–21:00 · Friday 14:00–21:00</span><span class="ar">السبت–الخميس ١٠:٠٠–٢١:٠٠ · الجمعة ١٤:٠٠–٢١:٠٠</span></div>
+      <div><b><span class="en">WhatsApp</span><span class="ar">واتساب</span></b>+974 6002 7117</div>
+      <div><b><span class="en">Email</span><span class="ar">البريد</span></b>hello@noorbeauty.qa</div>
+      <iframe class="map" loading="lazy" src="https://www.google.com/maps?q=Al+Sadd+Street,+Doha,+Qatar&output=embed"></iframe>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div><div class="logo" style="color:#fff">Noor <b>Beauty</b> Lounge</div><div style="margin-top:8px"><span class="en">Al Sadd Street, Building 14, Doha · Sat–Thu 10:00–21:00</span><span class="ar">شارع السد، مبنى ١٤، الدوحة</span></div></div>
+  <div><div>+974 6002 7117</div><div>hello@noorbeauty.qa</div><div>@noorbeautyqa</div></div>
+  <div class="demo"><span class="en">Demo website built by <a href="https://portfolio.getignitro.com">Ignitro</a> — Noor Beauty Lounge is a fictional business. Your own 3-page site like this: QAR 699, live in 5 days. WhatsApp "WEBSITE" to +974 6002 7117.</span><span class="ar">موقع تجريبي من <a href="https://portfolio.getignitro.com">Ignitro</a> — نور بيوتي لاونج اسم افتراضي.</span></div>
+</div></footer>
+<a class="wa" href="https://wa.me/97460027117" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.1.6 2.8.5a2.4 2.4 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c0-.1-.2-.2-.5-.3z"/></svg></a>
+<script src="site.js"></script>
+</body></html>
