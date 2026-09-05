@@ -3,14 +3,15 @@
   var WA='97460027117', KEY='dukkan_cart';
   var U=function(id){return 'https://images.unsplash.com/photo-'+id+'?w=800&h=800&fit=crop&q=75';};
   var P=[
-    {id:'dates-khalas',cat:'dates',en:'Khalas Dates — Premium Box',ar:'تمر خلاص — علبة فاخرة',den:'Soft, caramel-sweet Saudi Khalas. 1 kg gift box.',dar:'خلاص سعودي طري بطعم الكراميل. علبة هدية ١ كجم.',price:85,img:U('1587241321921-91a834d6d191'),badge:'BEST SELLER'},
-    {id:'dates-stuffed',cat:'dates',en:'Stuffed Dates — Almond & Pistachio',ar:'تمر محشو — لوز وفستق',den:'24 pieces, hand-filled daily.',dar:'٢٤ حبة، تُحشى يدويًا يوميًا.',price:95,img:U('1481391319762-47dff72954d9')},
-    {id:'choc-box',cat:'chocolate',en:'Assorted Chocolate Box',ar:'علبة شوكولاتة مشكّلة',den:'16 pralines: hazelnut, saffron, sea salt, rose.',dar:'١٦ قطعة برالين: بندق، زعفران، ملح بحري، ورد.',price:120,img:U('1481391319762-47dff72954d9'),badge:'GIFT'},
+    {id:'drip-cake',cat:'cakes',en:'Party Drip Cake — 1.5 kg',ar:'كيكة دريب للحفلات — ١٫٥ كجم',den:'Vanilla sponge, pink ganache drip, cookie crown. Serves 12.',dar:'إسفنج فانيليا، غاناش وردي، تاج كوكيز. تكفي ١٢ شخصًا.',price:220,img:U('1616690710400-a16d146927c5'),badge:'BEST SELLER'},
+    {id:'choc-cake',cat:'cakes',en:'Signature Chocolate Cake',ar:'كيكة الشوكولاتة المميزة',den:'Three layers, dark ganache, piped rosettes. Serves 10.',dar:'ثلاث طبقات، غاناش داكن، ورود كريمة. تكفي ١٠ أشخاص.',price:140,img:U('1578985545062-69928b1d9587')},
+    {id:'choc-box',cat:'chocolate',en:'Assorted Chocolate Box (16)',ar:'علبة شوكولاتة مشكّلة (١٦)',den:'Hazelnut, saffron, sea salt and rose pralines.',dar:'برالين بندق وزعفران وملح بحري وورد.',price:120,img:U('1481391319762-47dff72954d9'),badge:'GIFT'},
     {id:'cookies',cat:'baked',en:'Chocolate Chip Cookies (12)',ar:'كوكيز بالشوكولاتة (١٢)',den:'Baked every morning. Crisp edge, soft centre.',dar:'تُخبز كل صباح. حواف مقرمشة وقلب طري.',price:45,img:U('1558961363-fa8fdf82db35')},
-    {id:'cupcakes',cat:'baked',en:'Celebration Cupcakes (6)',ar:'كب كيك احتفالي (٦)',den:'Vanilla and chocolate, your colours on request.',dar:'فانيليا وشوكولاتة، بألوانك عند الطلب.',price:60,img:U('1607478900766-efe13248b125')},
+    {id:'cupcakes',cat:'baked',en:'Celebration Cupcakes (6)',ar:'كب كيك احتفالي (٦)',den:'Vanilla and chocolate, your colours on request.',dar:'فانيليا وشوكولاتة، بألوانك عند الطلب.',price:60,img:U('1599785209707-a456fc1337bb')},
+    {id:'donuts',cat:'baked',en:'Glazed Donut Box (6)',ar:'علبة دونات مغلّفة (٦)',den:'Chocolate, vanilla and sprinkles. Kids' favourite.',dar:'شوكولاتة وفانيليا ورشّات. المفضلة لدى الأطفال.',price:55,img:U('1551024601-bec78aea704b')},
+    {id:'crepes',cat:'baked',en:'Strawberry Crêpe Box (4)',ar:'علبة كريب بالفراولة (٤)',den:'Fresh cream and strawberries, made to order.',dar:'كريمة طازجة وفراولة، تُحضّر عند الطلب.',price:65,img:U('1587314168485-3236d6710814')},
     {id:'tiramisu',cat:'baked',en:'Tiramisu Slice Box (4)',ar:'علبة تيراميسو (٤ قطع)',den:'Coffee-soaked, mascarpone, cocoa. Alcohol-free.',dar:'مشبع بالقهوة مع ماسكربوني وكاكاو. خالٍ من الكحول.',price:70,img:U('1571115177098-24ec42ed204d')},
-    {id:'bakery-tray',cat:'baked',en:'Majlis Tray — Mixed Pastries',ar:'صينية المجلس — معجنات مشكّلة',den:'40 pieces for gatherings. Order a day ahead.',dar:'٤٠ قطعة للمناسبات. يُطلب قبل يوم.',price:180,img:U('1593288942460-e321b92a6cde')},
-    {id:'ramadan-hamper',cat:'gifts',en:'Corporate Gift Hamper',ar:'سلة هدايا للشركات',den:'Dates, chocolate, cookies, your logo on the card.',dar:'تمر وشوكولاتة وكوكيز مع شعاركم على البطاقة.',price:250,img:U('1587241321921-91a834d6d191'),badge:'CORPORATE'}
+    {id:'corporate-hamper',cat:'gifts',en:'Corporate Gift Hamper',ar:'سلة هدايا للشركات',den:'Chocolate box, cookies and cupcakes, your logo on the card.',dar:'شوكولاتة وكوكيز وكب كيك مع شعاركم على البطاقة.',price:250,img:U('1607478900766-efe13248b125'),badge:'CORPORATE'}
   ];
   var body=document.body, ar=function(){return body.classList.contains('ar');};
   var saved=null; try{saved=localStorage.getItem('lang');}catch(e){} if(saved==='ar') body.classList.add('ar');
