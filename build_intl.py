@@ -32,17 +32,11 @@ SALON = [
     ("Saturday to Thursday 10:00–21:00 · Friday 14:00–21:00", "Monday to Saturday 10:00–20:00 · Sunday 12:00–18:00"),
     ("Sat–Thu 10:00–21:00", "Mon–Sat 10:00–20:00"),
     ("Moroccan bath", "Body scrub &amp; steam"), ("Moroccan bath and massage", "body scrubs and massage"),
-    ("hair to henna", "hair to hands"), ("nails and henna", "nails and a trial"),
+    ("hair to henna", "hair to hands"), ("nails and henna", "nails and a trial"), ("nails, henna)", "nails, lashes)"),
     ("hello@noorbeauty.qa", "hello@noorbeautylounge.com"),
     ("maps?q=Al+Sadd+Street,+Springfield,+the city&output=embed", "maps?q=Maple+Avenue+Midtown&output=embed"),
     # prices
     ("from $120", "from $35"), ("from $80", "from $25"), ("from $150", "from $45"), ("Packages from $1,500", "Packages from $420"),
-    ("<span>120</span>", "<span>35</span>"), ("<span>70</span>", "<span>20</span>"), ("<span>from 280</span>", "<span>from 80</span>"),
-    ("<span>from 450</span>", "<span>from 130</span>"), ("<span>from 600</span>", "<span>from 170</span>"), ("<span>180</span>", "<span>50</span>"),
-    ("<span>80</span>", "<span>25</span>"), ("<span>100</span>", "<span>30</span>"), ("<span>140</span>", "<span>40</span>"),
-    ("<span>250</span>", "<span>70</span>"), ("<span>15</span>", "<span>5</span>"), ("<span>150</span>", "<span>45</span>"),
-    ("<span>260</span>", "<span>75</span>"), ("<span>220</span>", "<span>65</span>"), ("<span>280</span>", "<span>80</span>"),
-    ("<span>300</span>", "<span>85</span>"), ("<span>1,500</span>", "<span>420</span>"), ("<span>2,400</span>", "<span>680</span>"), ("<span>450</span>", "<span>130</span>"),
     ("All prices in Qatari Riyal and include consultation.", "All prices in USD and include consultation."),
     ('Demo website built by <a href="https://portfolio.getignitro.com">Ignitro</a> — Noor Beauty Lounge is a fictional business. Your own 3-page site like this: $699, live in 5 days. WhatsApp "WEBSITE" to +1 (555) 010-0199.', "Portfolio demo — Noor Beauty Lounge is a fictional business. A 3-page site like this: $100, live in 5 days."),
 ]
@@ -103,6 +97,7 @@ STORE_JS = [
     ("var del=sub>=150||sub===0?0:15", "var del=sub>=40||sub===0?0:5"), ("'QAR '", "'$'"), ("QAR '", "$'"), ("'Delivery: '+(del?'QAR 15':'Free')", "'Delivery: '+(del?'$5':'Free')"),
     ("'TOTAL: QAR '", "'TOTAL: $'"), ("' = QAR '", "' = $'"), ("'97460027117'", "'" + PHONE_WA + "'"),
 ]
+SALON_PRICES = {"120":"35","70":"20","280":"80","450":"130","600":"170","180":"50","80":"25","100":"30","140":"40","250":"70","15":"5","150":"45","260":"75","220":"65","300":"85","1,500":"420","2,400":"680"}
 PRICE_MAP = {"220": "60", "140": "40", "120": "35", "45": "12", "60": "18", "55": "15", "65": "18", "70": "20", "250": "70"}
 
 def strip_arabic(h):
@@ -119,6 +114,7 @@ for site, extra in [("salon", SALON), ("contracting", CONTRACTING), ("store", ST
     for f in (out / site).glob("*.html"):
         h = f.read_text(encoding="utf-8")
         h = strip_arabic(h)
+        if site == "salon": h = re.sub(r"<span>(from )?([\d,]+)</span>", lambda m: "<span>" + (m.group(1) or "") + SALON_PRICES.get(m.group(2), m.group(2)) + "</span>", h)
         h = apply(h, extra)      # site-specific first (matches Qatar wording)
         h = apply(h, COMMON)
         h = apply(h, extra)      # second pass for strings that only match after COMMON
