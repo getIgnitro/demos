@@ -134,7 +134,7 @@ for site, extra in [("salon", SALON), ("contracting", CONTRACTING), ("store", ST
         j = j.replace("'QAR 15'", "'$5'").replace("QAR", "$")
         f.write_text(j, encoding="utf-8")
     for f in (out / site).glob("*.css"):
-        c = f.read_text(encoding="utf-8").replace("— demo by Ignitro", "— portfolio demo").replace("— demo store by Ignitro", "— portfolio demo")
+        c = f.read_text(encoding="utf-8").replace("— demo by Ignitro", "— portfolio demo").replace("— demo store by Ignitro", "— portfolio demo").replace("Noor Beauty Lounge", "Élise Beauty Studio").replace("Al Reem Contracting & Trading", "Berger & Söhne Bau").replace("Dukkan Sweets", "Pâtisserie Lumière")
         f.write_text(c, encoding="utf-8")
 
 HUB = '''<!doctype html>
