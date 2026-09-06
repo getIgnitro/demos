@@ -230,3 +230,4 @@ HUB = HUB.replace("<h2>Dukkan Sweets</h2><p>Cakes and bakes: catalogue, cart, de
 (out / "index.html").write_text(HUB, encoding="utf-8")
 print("european identities applied (USD kept)")
 import runpy; runpy.run_path(str(root / "build_estore.py"))
+runpy.run_path(str(root / "build_qstore.py"))
