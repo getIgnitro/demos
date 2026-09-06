@@ -33,7 +33,7 @@ for name, pr, img, d in [("Discovery Gift Set", 39, "box", "Praliné 9 + two tab
     add("gifts", name, pr, img, d, "GIFT")
 for name, pr, img, d in [("Hot Chocolate Flakes · 250 g", 13, "box", "Real couverture flakes. Two spoons per cup."), ("Cocoa Nibs · 200 g", 9, "box", "Roasted, unsweetened, for baking and bowls."),
                           ("Baking Couverture · 1 kg", 28, "box", "Dark 64%, callets, for professionals and serious home bakers."), ("Praliné Spread · 300 g", 11, "box", "Hazelnut praliné, no palm oil."),
-                          ("Chocolate Fondue Kit", 36, "cake", "500 g couverture, ceramic pot, four forks."), ("Tasting Flight · 6 origins", 27, "box", "Six 20 g squares, tasting card included.")]:
+                          ("Chocolate Fondue Kit", 36, "cake", "500 g couverture, ceramic pot, four forks."), ("Tasting Flight · 6 origins", 27, "box", "Six 20 g squares, tasting card included."), ("Drinking Chocolate Gift Tin · 500 g", 19, "cake", "Flakes, a wooden spoon and the recipe card, in a keepsake tin.")]:
     add("pantry", name, pr, img, d)
 assert len(P) == 40, len(P)
 CATS = [("all", "All"), ("pralines", "Pralines"), ("truffles", "Truffles"), ("bars", "Tablets"), ("pastries", "Pastries"), ("gifts", "Gifts"), ("pantry", "Pantry")]
