@@ -68,7 +68,7 @@ for f in out.glob("*.html"):
         # tag text boundaries only: >EN< ; also option/label/button text
         h = h.replace(f">{en}<", f">{w}<")
     # option elements can't hold spans → use plain Arabic swap via data attr (keep English, add title)
-    h = re.sub(r'<option><span class="en">(.*?)</span><span class="ar">(.*?)</span></option>', r'<option>\1</option>', h)
+    h = re.sub(r'<option([^>]*)><span class="en">(.*?)</span><span class="ar">(.*?)</span></option>', r'<option\1>\2</option>', h)
     # header: language button + fonts + css hooks
     h = h.replace('family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600;700;800&display=swap', 'family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;600;700;800&family=Cairo:wght@400;700;900&display=swap')
     h = h.replace('<div class="right"><a class="icon" href="account.html">', '<div class="right"><button class="lang" id="lang">عربي</button><a class="icon" href="account.html">')
