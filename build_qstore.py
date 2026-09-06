@@ -58,7 +58,9 @@ j = j.replace("Ships in 1–2 working days.", "Delivered today if ordered before
 j = j.replace("In the live build this step runs on Stripe or PayPal with real receipts.", "In the live build this step runs on Tap / Skipcash / QPay with real receipts.")
 j = j.replace("if(pay==='card'&&(", "if(pay==='cod'){} else if(pay==='card'&&(")
 j = j.replace("'97460027117'", "'97460027117'").replace("15550100199", "97460027117")
-j = j.replace("Maison Cacao", "Bait Al Cacao").replace("hand-finished in Brussels", "hand-finished in Doha").replace("MC-'+new Date()", "BC-'+new Date()")
+j = j.replace("Maison Cacao", "Bait Al Cacao").replace("hand-finished in Brussels", "hand-finished in Doha")
+for a_, b_ in [("Marie L. · Brussels", "Maryam A. · West Bay"), ("Tom H. · Antwerp", "Tariq H. · Al Wakrah"), ("Arrived next day, perfectly packed, nothing melted.", "Arrived the same afternoon, perfectly packed, nothing melted."), ("<b>Ships</b> in 1–2 working days · <b>Free delivery</b> over $60", "<b>Same-day delivery</b> in Doha before 14:00 · <b>Free delivery</b> over QAR 200")]:
+    j = j.replace(a_, b_).replace("MC-'+new Date()", "BC-'+new Date()")
 (out / "app.js").write_text(j, encoding="utf-8")
 # checkout: show/hide COD panel via existing tab logic — add a COD panel
 ck = (out / "checkout.html").read_text(encoding="utf-8")
