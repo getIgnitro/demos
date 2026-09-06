@@ -159,9 +159,9 @@ a.card:hover{transform:translateY(-3px)}.card .t{font-size:12px;font-weight:800;
 <p class="lead">Every demo is a real working site: mobile-first, WhatsApp button, Google Maps, contact form, fast static hosting. The businesses are fictional. Yours would carry your name, photos and colours.</p>
 <div class="grid">
   <a class="card" href="salon/"><div class="t">Basic · 3 pages</div><h2>Noor Beauty Lounge</h2><p>Salon. Home, services with prices, WhatsApp booking form.</p><span class="pr">$100 · live in 5 days</span></a>
-  <a class="card" href="contracting/"><div class="t">Starter · 5 pages</div><h2>Al Reem Contracting</h2><p>Contractor. Services, project gallery, team page, quote form.</p><span class="pr">$180</span></a>
-  <a class="card" href="store/"><div class="t">Online store</div><h2>Dukkan Sweets</h2><p>Cakes and bakes: catalogue, cart, delivery rules, checkout to WhatsApp.</p><span class="pr">$360</span></a>
-  <a class="card" href="estore/"><div class="t">E-commerce · payment gateway</div><h2>Maison Cacao</h2><p>Chocolatier, Brussels. 40 products, search &amp; filters, cart, coupons, Stripe/PayPal checkout, account &amp; order history, policies, cookie consent.</p><span class="pr">$700 · 14 days</span></a>
+  <a class="card" href="contracting/"><div class="t">Starter · 5 pages</div><h2>Al Reem Contracting</h2><p>Contractor. Services, project gallery, team page, quote form.</p><span class="pr">$180 · live in 7 days</span></a>
+  <a class="card" href="store/"><div class="t">Online store</div><h2>Dukkan Sweets</h2><p>Cakes and bakes: catalogue, cart, delivery rules, checkout to WhatsApp.</p><span class="pr">$360 · live in 10 days</span></a>
+  <a class="card" href="estore/"><div class="t">E-commerce · payment gateway</div><h2>Maison Cacao</h2><p>Chocolatier, Brussels. 40 products, search &amp; filters, cart, coupons, Stripe/PayPal checkout, account &amp; order history, policies, cookie consent.</p><span class="pr">$700 · live in 14 days</span></a>
 </div>
 <div class="cta"><div><b>Want one like these?</b><div style="opacity:.8;margin-top:4px">3 pages · mobile-first · live in 5 days · from $100</div></div><span class="btn">Message me on Upwork</span></div>
 <div class="foot">Portfolio demos · fictional businesses · built and hosted by a small studio.</div>
