@@ -39,6 +39,7 @@ TXT = [
     ("Portfolio demo — Bait Al Cacao is a fictional business. Payments are simulated; the live build runs on Stripe or PayPal. A store like this, with payment gateway and 40 products loaded: $700, delivered in 14 days.",
      'Demo online store built by <a href="https://portfolio.getignitro.com" style="color:#F07800;font-weight:700">Ignitro</a> — Bait Al Cacao is a fictional business; payments are simulated. The live build runs on Tap / Skipcash / QPay with cash on delivery. ' + PRICE_LINE + ' WhatsApp "WEBSITE" to +974 6002 7117.'),
     ("Pralines, truffles, tablets and pastries from our Brussels atelier. Ships in 1–2 days.", "Pralines, truffles, tablets and pastries from our kitchen at The Pearl, Doha. Same-day delivery."),
+    ("Our atelier in the Sablon, Brussels, since 2009.", "Our kitchen at The Pearl, Doha, since 2015."), ("Brussels atelier", "kitchen at The Pearl"), ("Sablon, Brussels", "The Pearl, Doha"), ("Brussels", "Doha"),
     ('<span id="sub">$0</span>', '<span id="sub">QAR 0</span>'), ('<span id="tot">$0</span>', '<span id="tot">QAR 0</span>'),
 ]
 for f in out.glob("*.html"):
