@@ -231,3 +231,4 @@ HUB = HUB.replace("<h2>Dukkan Sweets</h2><p>Cakes and bakes: catalogue, cart, de
 print("european identities applied (USD kept)")
 import runpy; runpy.run_path(str(root / "build_estore.py"))
 runpy.run_path(str(root / "build_qstore.py"))
+runpy.run_path(str(root / "build_qstore_ar.py"))

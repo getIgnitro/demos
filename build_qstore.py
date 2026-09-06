@@ -6,7 +6,7 @@ src, out = root / "intl" / "estore", root / "estore"
 if out.exists(): shutil.rmtree(out)
 shutil.copytree(src, out)
 
-PRICE_LINE = "__PRICE_LINE__"   # replaced once Kashif approves the figure
+PRICE_LINE = "A store like this: QAR 3,399, delivered in 14 days."   # approved by Kashif 6 Sep 2026
 TXT = [
     ("Maison <b>Cacao</b>", "Bait <b>Al Cacao</b>"), ("Maison Cacao", "Bait Al Cacao"),
     ("Chocolatier in the Sablon, Brussels, since 2009.", "Chocolatier at The Pearl, Doha, since 2015."),

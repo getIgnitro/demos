@@ -77,3 +77,9 @@ footer .demo{grid-column:1/-1;margin-top:22px;padding-top:16px;border-top:1px so
 @media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}.usp,.pd,.cart,.chk,.acct,.split,.contact{grid-template-columns:1fr}footer .wrap{grid-template-columns:1fr 1fr}
   .menu{display:none;position:absolute;top:70px;left:0;right:0;background:var(--cream);flex-direction:column;padding:18px 20px;gap:16px;border-bottom:1px solid var(--line)}.menu.open{display:flex}.burger{display:block}
   .sum{position:static}.toolbar{grid-template-columns:1fr}.line{grid-template-columns:60px 1fr}.line .qty,.line .rm{grid-column:2}section{padding:44px 0}.icon span.t{display:none}}
+
+/* Arabic layer */
+body.ar{direction:rtl;font-family:'Cairo','Inter',sans-serif}body.ar h1,body.ar h2,body.ar h3{font-family:'Cairo',sans-serif;font-weight:900}
+.en,.ar{display:inline}body.ar .en{display:none}body:not(.ar) .ar{display:none}
+.lang{font-size:12px;font-weight:800;border:1.5px solid var(--cocoa);border-radius:999px;padding:8px 12px;background:none;color:var(--cocoa)}
+body.ar .badge{left:auto;right:10px}body.ar .wish{right:auto;left:10px}body.ar .wa{right:auto;left:18px}body.ar .toast{font-family:'Cairo',sans-serif}
