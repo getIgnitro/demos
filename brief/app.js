@@ -409,7 +409,7 @@
     if (i >= 0) seg = seg.slice(i + 1);
     var titled = function (t) {
       return t.replace(/-+/g, ' ').replace(/\s+/g, ' ').trim()
-              .replace(/[a-z]/g, function (c) { return c.toUpperCase(); });
+              .replace(/(^|\s)([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); });
     };
     if (seg.length && PKGMAP[seg[0].toLowerCase()]) { pk = seg[0].toLowerCase(); seg = seg.slice(1); }
     if (seg.length && !who) who = titled(decodeURIComponent(seg.join(' ')));
@@ -418,7 +418,8 @@
     var radio = document.querySelector('input[name=package][value="' + PKGMAP[pk] + '"]');
     if (!radio) return;
     radio.checked = true;
-    document.querySelector('.pkgs').hidden = true;
+    var pkgs = document.querySelector('.pkgs');
+    pkgs.hidden = true; pkgs.style.display = 'none';
     var box = document.createElement('div');
     box.className = 'locked';
     box.innerHTML = '<span class="en">Your package</span><span class="ar">باقتك</span><b>' + PKGMAP[pk] + '</b>';
