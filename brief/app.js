@@ -80,6 +80,21 @@
   $$('input[name=pages]').forEach(function (c) { c.addEventListener('change', function () { pageHint(); save(); }); });
   $$('input[name=package]').forEach(function (r) { r.addEventListener('change', function () { pageHint(); save(); }); });
 
+  /* ---------- add-on reveals ---------- */
+  function reveal(tickId, offerId) {
+    var t = $('#' + tickId), o = $('#' + offerId);
+    if (!t || !o) return;
+    var box = t.querySelector('input');
+    var sync = function () {
+      o.hidden = !box.checked;
+      if (!box.checked) $$('input[name=addons]', o).forEach(function (a) { a.checked = false; });
+    };
+    box.addEventListener('change', function () { sync(); save(); });
+    sync();
+  }
+  reveal('t_nologo', 'o_logo');
+  reveal('t_stock', 'o_shoot');
+
   /* ---------- autosave ---------- */
   function collect() {
     var d = {};
@@ -319,6 +334,12 @@
     if (d.emails_wanted) L.push('Mailbox to create: ' + d.emails_wanted);
     if (uploads.cr.length) L.push('CR uploaded: yes');
     L.push('');
+    if ((d.addons || []).length) {
+      L.push('');
+      L.push('*** ADD-ONS REQUESTED ***');
+      d.addons.forEach(function (a) { L.push('+ ' + a); });
+      L.push('');
+    }
     L.push('FEATURES: ' + ((d.features || []).join(', ') || '—'));
     if (d.special) L.push('Special: ' + d.special);
     if (d.deadline) L.push('Needed by: ' + d.deadline);
