@@ -401,8 +401,18 @@
                  business:'Business — 12 pages · QAR 1,199', store:'Online store · QAR 1,999',
                  ecom:'E-commerce + payment gateway · QAR 3,399' };
   (function () {
+    // Clean paths:  /starter/blerun-suit   (also accepts ?pkg=&for= )
     var q = new URLSearchParams(location.search);
     var pk = (q.get('pkg') || '').toLowerCase(), who = q.get('for') || '';
+    var seg = location.pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+    var i = seg.indexOf('brief');            // ignore any /brief/ prefix
+    if (i >= 0) seg = seg.slice(i + 1);
+    var titled = function (t) {
+      return t.replace(/-+/g, ' ').replace(/\s+/g, ' ').trim()
+              .replace(/[a-z]/g, function (c) { return c.toUpperCase(); });
+    };
+    if (seg.length && PKGMAP[seg[0].toLowerCase()]) { pk = seg[0].toLowerCase(); seg = seg.slice(1); }
+    if (seg.length && !who) who = titled(decodeURIComponent(seg.join(' ')));
     if (who) { var el = document.querySelector('[name=biz_en]'); if (el && !el.value) el.value = who; }
     if (!PKGMAP[pk]) return;
     var radio = document.querySelector('input[name=package][value="' + PKGMAP[pk] + '"]');
