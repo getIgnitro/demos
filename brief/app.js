@@ -92,8 +92,6 @@
     box.addEventListener('change', function () { sync(); save(); });
     sync();
   }
-  reveal('t_nologo', 'o_logo');
-  reveal('t_stock', 'o_shoot');
 
   /* ---------- autosave ---------- */
   function collect() {
