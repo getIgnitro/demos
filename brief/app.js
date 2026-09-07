@@ -117,6 +117,62 @@
     if (raw.step && raw.step > 0 && raw.step <= FORMLAST) go(raw.step);
   }
 
+  /* ---------- field validation ---------- */
+  var MSG = {
+    name:   { en: 'Please write a name, not numbers.',            ar: 'يرجى كتابة اسم وليس أرقامًا.' },
+    phone:  { en: 'Please enter a valid phone number.',            ar: 'يرجى إدخال رقم هاتف صحيح.' },
+    email:  { en: 'Please enter a valid email address.',           ar: 'يرجى إدخال بريد إلكتروني صحيح.' },
+    year:   { en: 'Please enter a 4-digit year.',                  ar: 'يرجى إدخال سنة من ٤ أرقام.' },
+    number: { en: 'Numbers only.',                                 ar: 'أرقام فقط.' },
+    url:    { en: 'That does not look like a link.',               ar: 'هذا لا يبدو رابطًا صحيحًا.' },
+    domain: { en: 'Write it like yourbusiness.com — no spaces.',   ar: 'اكتبه هكذا yourbusiness.com بدون مسافات.' },
+    req:    { en: 'This one is needed.',                           ar: 'هذا الحقل مطلوب.' }
+  };
+  // strip characters that can never belong in the field, as the client types
+  var CLEAN = {
+    name:   function (v) { return v.replace(/[0-9_@#$%^*+=<>{}\[\]\/|~`]/g, ''); },
+    phone:  function (v) { return v.replace(/[^\d+\-\s()]/g, ''); },
+    year:   function (v) { return v.replace(/\D/g, '').slice(0, 4); },
+    number: function (v) { return v.replace(/\D/g, ''); },
+    domain: function (v) { return v.replace(/\s/g, '').toLowerCase(); }
+  };
+  var TEST = {
+    name:   function (v) { return /[\p{L}]{2}/u.test(v); },
+    phone:  function (v) { return (v.replace(/\D/g, '').length >= 7); },
+    email:  function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); },
+    year:   function (v) { var n = +v; return v.length === 4 && n >= 1900 && n <= new Date().getFullYear(); },
+    number: function (v) { return /^\d+$/.test(v); },
+    url:    function (v) { return /\./.test(v) && !/\s/.test(v.trim()); },
+    domain: function (v) { return /^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(v.replace(/^https?:\/\//, '').replace(/\/.*$/, '')); }
+  };
+  function msgFor(kind) { var m = MSG[kind] || MSG.req; return body.classList.contains('ar') ? m.ar : m.en; }
+  function showMsg(el, text) {
+    var f = el.closest('.f') || el.parentNode;
+    var m = f.querySelector('.msg');
+    if (!text) { if (m) m.remove(); el.classList.remove('bad'); return; }
+    if (!m) { m = document.createElement('div'); m.className = 'msg'; f.appendChild(m); }
+    m.textContent = text; el.classList.add('bad');
+  }
+  function checkField(el) {
+    var kind = el.dataset.v, v = el.value.trim();
+    if (!v) { showMsg(el, el.hasAttribute('required') ? msgFor('req') : ''); return !el.hasAttribute('required'); }
+    if (!kind || !TEST[kind]) { showMsg(el, ''); return true; }
+    var ok = TEST[kind](v);
+    showMsg(el, ok ? '' : msgFor(kind));
+    return ok;
+  }
+  $$('input[data-v]').forEach(function (el) {
+    var kind = el.dataset.v;
+    el.addEventListener('input', function () {
+      if (CLEAN[kind]) {
+        var c = CLEAN[kind](el.value);
+        if (c !== el.value) { var pos = el.selectionStart - (el.value.length - c.length); el.value = c; try { el.setSelectionRange(pos, pos); } catch (e) {} }
+      }
+      if (el.classList.contains('bad')) checkField(el);
+    });
+    el.addEventListener('blur', function () { if (el.value.trim()) checkField(el); });
+  });
+
   /* ---------- steps ---------- */
   function go(n) {
     steps[cur].classList.remove('on');
@@ -129,11 +185,12 @@
   }
   function validate(i) {
     var ok = true, first = null;
-    $$('.step[data-step="' + i + '"] [required]').forEach(function (el) {
-      var bad = el.type === 'checkbox' ? !el.checked : !el.value.trim();
-      el.classList.toggle('bad', bad);
-      if (bad && !first) first = el;
-      if (bad) ok = false;
+    $$('.step[data-step="' + i + '"] [required], .step[data-step="' + i + '"] input[data-v]').forEach(function (el) {
+      var good;
+      if (el.type === 'checkbox') { good = el.checked; el.classList.toggle('bad', !good); }
+      else good = checkField(el);
+      if (!good && !first) first = el;
+      if (!good) ok = false;
     });
     if (!ok && first) { first.focus(); first.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
     return ok;

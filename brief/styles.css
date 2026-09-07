@@ -107,3 +107,5 @@ textarea{resize:vertical;line-height:1.5}
 .locked span{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)}
 .locked b{font-size:17px;font-weight:800}
 .hello{font-size:17px;font-weight:800;color:var(--purple);margin-bottom:6px}
+
+.msg{font-size:12.5px;font-weight:600;color:#c0392b;margin-top:5px}
