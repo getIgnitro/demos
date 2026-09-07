@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Brief — Ignitro</title>
+<meta name="description" content="Tell us about your business and we'll build your website. Takes about 10 minutes, saves as you go.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%236C2BD9'/><path d='M36 8 20 36h12l-4 20 16-28H32z' fill='%23F07800'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="https://getignitro.com"><img src="logo.png" alt="Ignitro"></a>
+    <div class="hd-right">
+      <span class="saved" id="saved">Saved</span>
+      <button class="lang" id="lang">عربي</button>
+    </div>
+  </div>
+</header>
+
+<div class="prog"><div class="bar" id="bar"></div></div>
+
+<main class="wrap">
+
+<!-- ===== INTRO ===== -->
+<section class="step on" data-step="0">
+  <span class="eyebrow"><i></i><span class="en">Website brief</span><span class="ar">استمارة الموقع</span></span>
+  <h1><span class="en">Tell us about your business.<br>We'll build the website.</span><span class="ar">أخبرنا عن عملك.<br>ونحن نبني الموقع.</span></h1>
+  <p class="lead"><span class="en">About 10 minutes. It saves as you type, so you can close this and come back on the same phone or computer. Short answers are fine — we write the polish.</span><span class="ar">حوالي ١٠ دقائق. يُحفظ تلقائيًا أثناء الكتابة، ويمكنك العودة لاحقًا من الجهاز نفسه. الإجابات المختصرة كافية — نحن نصيغ النص.</span></p>
+  <div class="pkgs">
+    <label class="pkg"><input type="radio" name="package" value="Basic — 3 pages · QAR 699"><span><b><span class="en">Basic</span><span class="ar">أساسي</span></b><em>3 <span class="en">pages</span><span class="ar">صفحات</span> · QAR 699</em></span></label>
+    <label class="pkg"><input type="radio" name="package" value="Starter — 5 pages · QAR 899"><span><b><span class="en">Starter</span><span class="ar">ستارتر</span></b><em>5 <span class="en">pages</span><span class="ar">صفحات</span> · QAR 899</em></span></label>
+    <label class="pkg"><input type="radio" name="package" value="Business — 12 pages · QAR 1,199"><span><b><span class="en">Business</span><span class="ar">أعمال</span></b><em>12 <span class="en">pages</span><span class="ar">صفحة</span> · QAR 1,199</em></span></label>
+    <label class="pkg"><input type="radio" name="package" value="Online store · QAR 1,999"><span><b><span class="en">Online store</span><span class="ar">متجر إلكتروني</span></b><em><span class="en">WhatsApp checkout</span><span class="ar">طلب عبر واتساب</span> · QAR 1,999</em></span></label>
+    <label class="pkg"><input type="radio" name="package" value="E-commerce + payment gateway · QAR 3,399"><span><b><span class="en">E-commerce</span><span class="ar">تجارة إلكترونية</span></b><em><span class="en">payment gateway</span><span class="ar">بوابة دفع</span> · QAR 3,399</em></span></label>
+  </div>
+  <div class="nav"><button class="btn next"><span class="en">Start</span><span class="ar">ابدأ</span> →</button></div>
+</section>
+
+<!-- ===== 1 BUSINESS ===== -->
+<section class="step" data-step="1">
+  <span class="num">1 / 7</span>
+  <h2><span class="en">Your business</span><span class="ar">عملك</span></h2>
+  <p class="sub"><span class="en">The basics that appear on every page.</span><span class="ar">الأساسيات التي تظهر في كل صفحة.</span></p>
+  <div class="grid">
+    <div class="f req"><label><span class="en">Business name (English)</span><span class="ar">اسم النشاط (إنجليزي)</span></label><input name="biz_en" required></div>
+    <div class="f"><label><span class="en">Business name (Arabic)</span><span class="ar">اسم النشاط (عربي)</span></label><input name="biz_ar" dir="auto"><small><span class="en">As on your trade licence, if you have it</span><span class="ar">كما في السجل التجاري إن وُجد</span></small></div>
+    <div class="f w req"><label><span class="en">What you do, in one line</span><span class="ar">ما تقدمه، في سطر واحد</span></label><input name="tagline" placeholder="e.g. Civil works, MEP and fit-out contractor in Doha" required></div>
+    <div class="f"><label><span class="en">Industry</span><span class="ar">المجال</span></label><select name="industry"><option value=""></option><option>Construction / contracting</option><option>Salon / beauty</option><option>Clinic / medical</option><option>Restaurant / café</option><option>Retail / shop</option><option>Trading</option><option>Professional services</option><option>Education / training</option><option>Logistics / transport</option><option>Real estate</option><option>Other</option></select></div>
+    <div class="f"><label><span class="en">Year established</span><span class="ar">سنة التأسيس</span></label><input name="est_year" inputmode="numeric" placeholder="2012"></div>
+    <div class="f"><label><span class="en">Team size</span><span class="ar">عدد الفريق</span></label><input name="team_size" placeholder="e.g. 60"></div>
+    <div class="f req"><label><span class="en">Contact person</span><span class="ar">الشخص المسؤول</span></label><input name="contact_name" required></div>
+    <div class="f req"><label><span class="en">WhatsApp number for the site</span><span class="ar">رقم واتساب للموقع</span></label><input name="wa" placeholder="+974 …" inputmode="tel" required></div>
+    <div class="f"><label><span class="en">Landline / other phone</span><span class="ar">هاتف آخر</span></label><input name="phone" inputmode="tel"></div>
+    <div class="f req"><label><span class="en">Email for the site</span><span class="ar">البريد للموقع</span></label><input name="email" type="email" required></div>
+    <div class="f w req"><label><span class="en">Address</span><span class="ar">العنوان</span></label><input name="address" placeholder="Building, street, zone, area, city" required></div>
+    <div class="f w"><label><span class="en">Google Maps link</span><span class="ar">رابط خرائط جوجل</span></label><input name="maps" placeholder="https://maps.app.goo.gl/…"><small><span class="en">Open Google Maps, find your business, tap Share, paste the link. Or send the pin on WhatsApp later.</span><span class="ar">افتح خرائط جوجل، ابحث عن نشاطك، اضغط مشاركة، والصق الرابط. أو أرسل الموقع عبر واتساب لاحقًا.</span></small></div>
+    <div class="f"><label><span class="en">Areas you serve</span><span class="ar">المناطق التي تخدمها</span></label><input name="areas" placeholder="e.g. All Qatar / Doha only"></div>
+    <div class="f"><label><span class="en">Opening hours</span><span class="ar">ساعات العمل</span></label><input name="hours" placeholder="Sat–Thu 7:00–18:00"></div>
+    <div class="f"><label>Instagram</label><input name="instagram" placeholder="@yourbusiness"></div>
+    <div class="f"><label>Facebook</label><input name="facebook"></div>
+    <div class="f">
+      <label>TikTok</label><input name="tiktok"></div>
+    <div class="f"><label>LinkedIn</label><input name="linkedin"></div>
+  </div>
+  <div class="nav"><button class="btn ghost back">←</button><button class="btn next"><span class="en">Continue</span><span class="ar">متابعة</span> →</button></div>
+</section>
+
+<!-- ===== 2 PAGES ===== -->
+<section class="step" data-step="2">
+  <span class="num">2 / 7</span>
+  <h2><span class="en">Your pages</span><span class="ar">صفحات موقعك</span></h2>
+  <p class="sub"><span class="en">Tick what you want. We'll tell you if it doesn't fit your package.</span><span class="ar">اختر ما تريد. سنخبرك إن لم يتناسب مع باقتك.</span></p>
+  <div class="chk" id="pages">
+    <label><input type="checkbox" name="pages" value="Home" checked><span>Home <em><span class="en">— required</span><span class="ar">— أساسية</span></em></span></label>
+    <label><input type="checkbox" name="pages" value="Services"><span><span class="en">Services</span><span class="ar">الخدمات</span></span></label>
+    <label><input type="checkbox" name="pages" value="Products"><span><span class="en">Products</span><span class="ar">المنتجات</span></span></label>
+    <label><input type="checkbox" name="pages" value="Projects / Portfolio"><span><span class="en">Projects / Portfolio</span><span class="ar">المشاريع / الأعمال</span></span></label>
+    <label><input type="checkbox" name="pages" value="Gallery"><span><span class="en">Gallery</span><span class="ar">معرض الصور</span></span></label>
+    <label><input type="checkbox" name="pages" value="About / Team"><span><span class="en">About / Team</span><span class="ar">من نحن / الفريق</span></span></label>
+    <label><input type="checkbox" name="pages" value="Menu / Price list"><span><span class="en">Menu / Price list</span><span class="ar">المنيو / قائمة الأسعار</span></span></label>
+    <label><input type="checkbox" name="pages" value="Testimonials"><span><span class="en">Testimonials</span><span class="ar">آراء العملاء</span></span></label>
+    <label><input type="checkbox" name="pages" value="Blog / News"><span><span class="en">Blog / News</span><span class="ar">المدونة / الأخبار</span></span></label>
+    <label><input type="checkbox" name="pages" value="Careers"><span><span class="en">Careers</span><span class="ar">الوظائف</span></span></label>
+    <label><input type="checkbox" name="pages" value="FAQ"><span>FAQ</span></label>
+    <label><input type="checkbox" name="pages" value="Contact" checked><span><span class="en">Contact</span><span class="ar">اتصل بنا</span></span></label>
+  </div>
+  <div class="f w"><label><span class="en">Any other page you need</span><span class="ar">صفحات أخرى تحتاجها</span></label><input name="pages_other" placeholder="e.g. Downloads, Certificates"></div>
+  <div class="note" id="pagecount"></div>
+  <div class="nav"><button class="btn ghost back">←</button><button class="btn next"><span class="en">Continue</span><span class="ar">متابعة</span> →</button></div>
+</section>
+
+<!-- ===== 3 SERVICES ===== -->
+<section class="step" data-step="3">
+  <span class="num">3 / 7</span>
+  <h2><span class="en">What you sell</span><span class="ar">ما تقدمه</span></h2>
+  <p class="sub"><span class="en">List your services or products. One line of description each is enough — we expand it.</span><span class="ar">اذكر خدماتك أو منتجاتك. سطر وصف لكل واحدة يكفي — نحن نوسّعه.</span></p>
+  <div id="services"></div>
+  <button class="add" id="addsvc">+ <span class="en">Add another</span><span class="ar">أضف آخر</span></button>
+  <div class="f w" style="margin-top:18px"><label><span class="en">Show prices on the website?</span><span class="ar">عرض الأسعار على الموقع؟</span></label>
+    <div class="radios"><label><input type="radio" name="show_prices" value="Yes, show prices"><span><span class="en">Yes</span><span class="ar">نعم</span></span></label><label><input type="radio" name="show_prices" value="No, no prices" checked><span><span class="en">No</span><span class="ar">لا</span></span></label><label><input type="radio" name="show_prices" value="From-prices only"><span><span class="en">"From" prices only</span><span class="ar">أسعار تبدأ من فقط</span></span></label></div>
+  </div>
+  <div class="nav"><button class="btn ghost back">←</button><button class="btn next"><span class="en">Continue</span><span class="ar">متابعة</span> →</button></div>
+</section>
+
+<!-- ===== 4 ABOUT & TRUST ===== -->
+<section class="step" data-step="4">
+  <span class="num">4 / 7</span>
+  <h2><span class="en">Why people should trust you</span><span class="ar">لماذا يثق بك العملاء</span></h2>
+  <p class="sub"><span class="en">This is what turns a visitor into a customer. Take your time here.</span><span class="ar">هذا ما يحوّل الزائر إلى عميل. خذ وقتك هنا.</span></p>
+  <div class="f w"><label><span class="en">Your story — 3 to 5 lines</span><span class="ar">قصتك — ٣ إلى ٥ أسطر</span></label><textarea name="story" rows="4" placeholder="When you started, how, where you are today"></textarea></div>
+  <div class="f w"><label><span class="en">Three things that make you different</span><span class="ar">ثلاثة أشياء تميّزك</span></label>
+    <input name="usp1" placeholder="1."><input name="usp2" placeholder="2." style="margin-top:8px"><input name="usp3" placeholder="3." style="margin-top:8px"></div>
+  <div class="f w"><label><span class="en">Key clients or projects</span><span class="ar">أبرز العملاء أو المشاريع</span></label><textarea name="projects" rows="3" placeholder="Name · what you did · year — one per line"></textarea><small><span class="en">Only names you have permission to show.</span><span class="ar">فقط الأسماء المسموح بعرضها.</span></small></div>
+  <div class="f w"><label><span class="en">Licences, certifications, grade, memberships</span><span class="ar">التراخيص والشهادات والتصنيف</span></label><input name="certs" placeholder="e.g. CR 12345 · Grade B · ISO 9001"></div>
+  <div class="f w"><label><span class="en">Team members to show</span><span class="ar">أعضاء الفريق للعرض</span></label><textarea name="team" rows="3" placeholder="Name · role · one line — one per line"></textarea></div>
+  <div class="f w"><label><span class="en">Customer testimonials</span><span class="ar">آراء العملاء</span></label><textarea name="testimonials" rows="3" placeholder="&quot;Quote&quot; — Name, company"></textarea><small><span class="en">Real ones only. If you have Google reviews we can pull them instead.</span><span class="ar">حقيقية فقط. إن كان لديك مراجعات جوجل يمكننا استخدامها.</span></small></div>
+  <div class="f w"><label><span class="en">Numbers you're proud of</span><span class="ar">أرقام تفتخر بها</span></label><input name="stats" placeholder="e.g. 140 projects · 13 years · 92% repeat clients"></div>
+  <div class="nav"><button class="btn ghost back">←</button><button class="btn next"><span class="en">Continue</span><span class="ar">متابعة</span> →</button></div>
+</section>
+
+<!-- ===== 5 LOOK ===== -->
+<section class="step" data-step="5">
+  <span class="num">5 / 7</span>
+  <h2><span class="en">Logo, photos &amp; look</span><span class="ar">الشعار والصور والمظهر</span></h2>
+  <p class="sub"><span class="en">Upload straight from your phone. Files go to us securely.</span><span class="ar">ارفع مباشرة من هاتفك. تصل الملفات إلينا بأمان.</span></p>
+
+  <div class="up" id="up_logo" data-kind="logo">
+    <div class="up-h"><b><span class="en">Your logo</span><span class="ar">شعارك</span></b><span class="en">PNG, JPG, PDF or the original design file</span><span class="ar">PNG أو JPG أو PDF أو الملف الأصلي</span></div>
+    <input type="file" accept="image/*,.pdf,.ai,.eps,.svg" multiple hidden>
+    <button type="button" class="pick">📎 <span class="en">Choose file</span><span class="ar">اختر ملفًا</span></button>
+    <label class="tick"><input type="checkbox" name="no_logo" value="No logo — use my name in clean type"><span><span class="en">I don't have a logo — use my business name in clean type</span><span class="ar">ليس لدي شعار — استخدم اسم النشاط بخط أنيق</span></span></label>
+    <div class="files"></div>
+  </div>
+
+  <div class="up" id="up_photos" data-kind="photos">
+    <div class="up-h"><b><span class="en">Photos of your work, team or place</span><span class="ar">صور أعمالك أو فريقك أو مقرك</span></b><span class="en">5–15 photos. Straight from the phone is fine.</span><span class="ar">من ٥ إلى ١٥ صورة. من الهاتف مباشرة مناسب.</span></div>
+    <input type="file" accept="image/*" multiple hidden>
+    <button type="button" class="pick">📷 <span class="en">Choose photos</span><span class="ar">اختر الصور</span></button>
+    <label class="tick"><input type="checkbox" name="stock_photos" value="Use stock photos"><span><span class="en">I don't have photos — use professional stock images</span><span class="ar">ليس لدي صور — استخدم صورًا احترافية جاهزة</span></span></label>
+    <div class="files"></div>
+  </div>
+
+  <div class="up" id="up_docs" data-kind="docs">
+    <div class="up-h"><b><span class="en">Anything else</span><span class="ar">أي شيء آخر</span></b><span class="en">Company profile, brochure, price list, menu, certificates</span><span class="ar">ملف الشركة، بروشور، قائمة أسعار، منيو، شهادات</span></div>
+    <input type="file" multiple hidden>
+    <button type="button" class="pick">📄 <span class="en">Choose files</span><span class="ar">اختر الملفات</span></button>
+    <div class="files"></div>
+  </div>
+
+  <div class="grid" style="margin-top:20px">
+    <div class="f"><label><span class="en">Brand colours</span><span class="ar">ألوان الهوية</span></label><input name="colours" placeholder="e.g. navy + orange, or 'use my logo colours'"></div>
+    <div class="f"><label><span class="en">Websites you like</span><span class="ar">مواقع أعجبتك</span></label><input name="refs" placeholder="Paste 1–3 links"></div>
+  </div>
+  <div class="f w"><label><span class="en">Pick the words that describe how it should feel</span><span class="ar">اختر الكلمات التي تصف الإحساس المطلوب</span></label>
+    <div class="chips" id="style">
+      <span data-v="Modern">Modern</span><span data-v="Classic">Classic</span><span data-v="Bold">Bold</span><span data-v="Minimal">Minimal</span><span data-v="Luxury">Luxury</span><span data-v="Friendly">Friendly</span><span data-v="Technical">Technical</span><span data-v="Warm">Warm</span><span data-v="Corporate">Corporate</span><span data-v="Colourful">Colourful</span>
+    </div></div>
+  <div class="f w"><label><span class="en">Anything you don't want</span><span class="ar">أشياء لا تريدها</span></label><input name="avoid" placeholder="e.g. no dark backgrounds, no stock people"></div>
+  <div class="nav"><button class="btn ghost back">←</button><button class="btn next"><span class="en">Continue</span><span class="ar">متابعة</span> →</button></div>
+</section>
+
+<!-- ===== 6 DOMAIN ===== -->
+<section class="step" data-step="6">
+  <span class="num">6 / 7</span>
+  <h2><span class="en">Your web address &amp; email</span><span class="ar">عنوان الموقع والبريد</span></h2>
+  <div class="radios big">
+    <label><input type="radio" name="domain_state" value="I already own a domain" checked><span><span class="en">I already own a domain</span><span class="ar">لدي نطاق بالفعل</span></span></label>
+    <label><input type="radio" name="domain_state" value="Please register a new domain"><span><span class="en">Please register a new one for me</span><span class="ar">سجّلوا لي نطاقًا جديدًا</span></span></label>
+  </div>
+  <div class="f w" id="own_domain"><label><span class="en">Your domain</span><span class="ar">نطاقك</span></label><input name="domain_have" placeholder="yourbusiness.com"><small><span class="en">We'll send you two simple steps to connect it. Keep your registrar login handy.</span><span class="ar">سنرسل لك خطوتين بسيطتين لربطه. جهّز بيانات دخول المسجّل.</span></small></div>
+  <div class="f w" id="new_domain" hidden><label><span class="en">Preferred names, in order</span><span class="ar">الأسماء المفضلة بالترتيب</span></label>
+    <input name="domain1" placeholder="firstchoice.com"><input name="domain2" placeholder="secondchoice.com" style="margin-top:8px"><input name="domain3" placeholder="thirdchoice.com" style="margin-top:8px">
+    <small><span class="en">QAR 299/year covers a standard .com. If a name is taken or premium-priced we show you the cost first. A .qa needs a copy of your commercial registration.</span><span class="ar">٢٩٩ ر.ق سنويًا تغطي نطاق .com عاديًا. إذا كان الاسم محجوزًا أو بسعر مميز نعرض التكلفة أولًا. نطاق .qa يتطلب نسخة من السجل التجاري.</span></small></div>
+  <div class="f w"><label><span class="en">Email addresses you want</span><span class="ar">عناوين البريد المطلوبة</span></label><input name="emails_wanted" placeholder="info@ · sales@ · your.name@"><small><span class="en">One mailbox is included.</span><span class="ar">صندوق بريد واحد مشمول.</span></small></div>
+  <div class="up" id="up_cr" data-kind="cr">
+    <div class="up-h"><b><span class="en">Commercial registration (CR)</span><span class="ar">السجل التجاري</span></b><span class="en">Only needed for a .qa domain</span><span class="ar">مطلوب فقط لنطاق .qa</span></div>
+    <input type="file" accept="image/*,.pdf" multiple hidden>
+    <button type="button" class="pick">📄 <span class="en">Upload CR</span><span class="ar">ارفع السجل</span></button>
+    <div class="files"></div>
+  </div>
+  <div class="nav"><button class="btn ghost back">←</button><button class="btn next"><span class="en">Continue</span><span class="ar">متابعة</span> →</button></div>
+</section>
+
+<!-- ===== 7 FEATURES ===== -->
+<section class="step" data-step="7">
+  <span class="num">7 / 7</span>
+  <h2><span class="en">Features</span><span class="ar">المزايا</span></h2>
+  <p class="sub"><span class="en">Everything ticked below is included in your package.</span><span class="ar">كل ما هو محدد أدناه مشمول في باقتك.</span></p>
+  <div class="chk">
+    <label><input type="checkbox" name="features" value="WhatsApp button" checked><span><span class="en">WhatsApp button</span><span class="ar">زر واتساب</span></span></label>
+    <label><input type="checkbox" name="features" value="Google Maps" checked><span><span class="en">Map with directions</span><span class="ar">خريطة مع الاتجاهات</span></span></label>
+    <label><input type="checkbox" name="features" value="Contact form" checked><span><span class="en">Contact form</span><span class="ar">نموذج تواصل</span></span></label>
+    <label><input type="checkbox" name="features" value="Quote request form"><span><span class="en">Quote request form</span><span class="ar">نموذج طلب عرض سعر</span></span></label>
+    <label><input type="checkbox" name="features" value="Photo gallery"><span><span class="en">Photo gallery</span><span class="ar">معرض صور</span></span></label>
+    <label><input type="checkbox" name="features" value="Instagram feed"><span><span class="en">Instagram feed</span><span class="ar">عرض إنستغرام</span></span></label>
+    <label><input type="checkbox" name="features" value="Google reviews"><span><span class="en">Google reviews</span><span class="ar">مراجعات جوجل</span></span></label>
+    <label><input type="checkbox" name="features" value="Downloadable brochure / profile"><span><span class="en">Downloadable brochure</span><span class="ar">بروشور للتحميل</span></span></label>
+    <label><input type="checkbox" name="features" value="Booking / appointment request"><span><span class="en">Booking request</span><span class="ar">طلب حجز</span></span></label>
+    <label><input type="checkbox" name="features" value="Newsletter signup"><span><span class="en">Newsletter signup</span><span class="ar">اشتراك النشرة</span></span></label>
+    <label><input type="checkbox" name="features" value="Arabic + English" checked><span><span class="en">Arabic + English</span><span class="ar">عربي وإنجليزي</span></span></label>
+    <label><input type="checkbox" name="features" value="Google Analytics" checked><span><span class="en">Visitor statistics</span><span class="ar">إحصائيات الزوار</span></span></label>
+  </div>
+  <div class="f w"><label><span class="en">Anything special you want the site to do</span><span class="ar">أي شيء خاص تريده من الموقع</span></label><textarea name="special" rows="3"></textarea></div>
+  <div class="f w"><label><span class="en">When do you need it live?</span><span class="ar">متى تريده جاهزًا؟</span></label><input name="deadline" placeholder="e.g. before end of the month"></div>
+  <label class="tick big"><input type="checkbox" name="consent" required><span><span class="en">The text, photos and logos I send are mine to use, or I have permission to use them.</span><span class="ar">النصوص والصور والشعارات التي أرسلها ملكي أو لدي إذن باستخدامها.</span></span></label>
+  <div class="nav"><button class="btn ghost back">←</button><button class="btn go" id="submit"><span class="en">Send my brief</span><span class="ar">أرسل الاستمارة</span> ✓</button></div>
+  <div class="err" id="err" hidden></div>
+</section>
+
+<!-- ===== DONE ===== -->
+<section class="step done" data-step="8">
+  <div class="tick-big">✓</div>
+  <h2><span class="en">Got it — thank you.</span><span class="ar">وصلتنا — شكرًا لك.</span></h2>
+  <p class="lead"><span class="en">Your brief is with us. Reference <b id="ref"></b>. We'll confirm on WhatsApp within the hour and your build starts as soon as the deposit is in.</span><span class="ar">وصلتنا استمارتك. الرقم المرجعي <b id="ref2"></b>. سنؤكد عبر واتساب خلال ساعة، ويبدأ التنفيذ فور استلام الدفعة الأولى.</span></p>
+  <div class="nav"><a class="btn" id="wa-link" target="_blank"><span class="en">Send a copy on WhatsApp</span><span class="ar">أرسل نسخة عبر واتساب</span></a></div>
+  <p class="fine"><span class="en">Ignitro Innovative Solutions · Tornado Tower, West Bay, Doha · Licensed by QFC · Regulated by Qatar Media City</span><span class="ar">إجنيترو للحلول المبتكرة · برج تورنيدو، الخليج الغربي، الدوحة</span></p>
+</section>
+
+</main>
+<script src="app.js"></script>
+</body></html>
