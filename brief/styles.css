@@ -102,3 +102,8 @@ textarea{resize:vertical;line-height:1.5}
   .btn{flex:1}
   .btn.ghost{flex:0 0 auto}
 }
+
+.locked{display:flex;flex-direction:column;gap:2px;background:var(--lav2);border:2px solid var(--purple);border-radius:14px;padding:14px 18px;margin:26px 0 8px}
+.locked span{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)}
+.locked b{font-size:17px;font-weight:800}
+.hello{font-size:17px;font-weight:800;color:var(--purple);margin-bottom:6px}

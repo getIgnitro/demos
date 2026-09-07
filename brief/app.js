@@ -318,6 +318,29 @@
     });
   };
 
+  /* ---------- pre-set package from the link ---------- */
+  var PKGMAP = { basic:'Basic — 3 pages · QAR 699', starter:'Starter — 5 pages · QAR 899',
+                 business:'Business — 12 pages · QAR 1,199', store:'Online store · QAR 1,999',
+                 ecom:'E-commerce + payment gateway · QAR 3,399' };
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var pk = (q.get('pkg') || '').toLowerCase(), who = q.get('for') || '';
+    if (who) { var el = document.querySelector('[name=biz_en]'); if (el && !el.value) el.value = who; }
+    if (!PKGMAP[pk]) return;
+    var radio = document.querySelector('input[name=package][value="' + PKGMAP[pk] + '"]');
+    if (!radio) return;
+    radio.checked = true;
+    document.querySelector('.pkgs').hidden = true;
+    var box = document.createElement('div');
+    box.className = 'locked';
+    box.innerHTML = '<span class="en">Your package</span><span class="ar">باقتك</span><b>' + PKGMAP[pk] + '</b>';
+    document.querySelector('.pkgs').insertAdjacentElement('afterend', box);
+    var h = document.querySelector('.step[data-step="0"] .lead');
+    if (h && who) {
+      h.insertAdjacentHTML('beforebegin', '<p class="hello"><span class="en">Welcome, ' + who + ' 👋</span><span class="ar">أهلًا، ' + who + ' 👋</span></p>');
+    }
+  })();
+
   /* ---------- boot ---------- */
   restore();
   domainToggle();
