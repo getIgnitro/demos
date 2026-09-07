@@ -220,7 +220,7 @@
     if (d.industry) L.push('Industry: ' + d.industry);
     if (d.est_year || d.team_size) L.push('Since ' + (d.est_year || '—') + ' · team ' + (d.team_size || '—'));
     L.push('Contact: ' + (d.contact_name || '') + ' · ' + (d.wa || '') + (d.phone ? ' · ' + d.phone : ''));
-    L.push('Email: ' + (d.email || ''));
+    L.push('Their email: ' + (d.email || ''));
     L.push('Address: ' + (d.address || ''));
     if (d.maps) L.push('Maps: ' + d.maps);
     if (d.hours) L.push('Hours: ' + d.hours);
@@ -259,7 +259,7 @@
     if (d.domain_have) L.push('Has: ' + d.domain_have);
     var dn = [d.domain1, d.domain2, d.domain3].filter(Boolean);
     if (dn.length) L.push('Wants: ' + dn.join(', '));
-    if (d.emails_wanted) L.push('Emails: ' + d.emails_wanted);
+    if (d.emails_wanted) L.push('Mailbox to create: ' + d.emails_wanted);
     if (uploads.cr.length) L.push('CR uploaded: yes');
     L.push('');
     L.push('FEATURES: ' + ((d.features || []).join(', ') || '—'));
